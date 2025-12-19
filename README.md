@@ -14,7 +14,7 @@
 ## 📄 Структура файлів
 
 ```
-stm32_modules/
+core/
 ├── Inc/
 │   ├── adc_handler.h
 │   ├── temperature_sensor.h

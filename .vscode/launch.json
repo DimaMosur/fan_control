@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug STM32F103 – ST-Link",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "stlink",
+      "device": "STM32F103C8",
+      "interface": "swd",
+      "executable": "${workspaceFolder}/build/Debug/cubemx.elf",
+      "cwd": "${workspaceFolder}",
+      "runToEntryPoint": "main",
+      "serialNumber": "",
+      "svdFile": "C:/ST/STM32CubeCLT_1.19.0/STMicroelectronics_CMSIS_SVD/STM32F103.svd",
+      "v1": false,
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 4
+      },
+      "serverpath": "C:/ST/STM32CubeCLT_1.19.0/STLink-gdb-server/bin/ST-LINK_gdbserver.exe",
+      "stm32cubeprogrammer": "C:/ST/STM32CubeCLT_1.19.0/STM32CubeProgrammer/bin",
+      "stlinkPath": "C:/ST/STM32CubeCLT_1.19.0/STLink-gdb-server/bin/ST-LINK_gdbserver.exe",
+      "armToolchainPath": "C:/ST/STM32CubeCLT_1.19.0/GNU-tools-for-STM32/bin",
+      "gdbPath": "C:/ST/STM32CubeCLT_1.19.0/GNU-tools-for-STM32/bin/arm-none-eabi-gdb.exe",
+      "serverArgs": [],
+      "showDevDebugOutput": "raw"
+    }
+  ]
+}

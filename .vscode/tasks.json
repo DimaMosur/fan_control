@@ -1,0 +1,52 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: Configure Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S", "${workspaceFolder}",
+        "-B", "${workspaceFolder}/build/Debug",
+        "-G", "Ninja",
+        "-DCMAKE_TOOLCHAIN_FILE=C:/ST/STM32CubeCLT_1.19.0/cmake/gcc-arm-none-eabi.cmake",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "CMake: Build Debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build", "${workspaceFolder}/build/Debug"
+      ],
+      "group": "build",
+      "dependsOn": "CMake: Configure Debug",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "CMake: Clean",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build", "${workspaceFolder}/build/Debug",
+        "--target", "clean"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "STM32: Flash via CubeProgrammer",
+      "type": "shell",
+      "command": "C:/ST/STM32CubeCLT_1.19.0/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe",
+      "args": [
+        "-c", "port=SWD", 
+        "-d", "${workspaceFolder}/build/Debug/cubemx.hex", 
+        "-v", "-rst"
+      ],
+      "group": "build",
+      "dependsOn": "CMake: Build Debug"
+    }
+  ]
+}
